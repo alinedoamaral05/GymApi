@@ -3,7 +3,7 @@ using GymApi.Data;
 using GymApi.Data.Request.GymClient;
 using GymApi.Data.Request.Workout;
 using GymApi.Data.Response.GymClient;
-using GymApi.Models;
+using GymApi.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GymApi.Controllers;

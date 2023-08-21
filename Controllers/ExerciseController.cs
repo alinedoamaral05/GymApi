@@ -1,10 +1,6 @@
-﻿using AutoMapper;
-using GymApi.Data;
-using GymApi.Models;
-using Microsoft.AspNetCore.Mvc;
-using GymApi.Data.Response.Exercise;
+﻿using Microsoft.AspNetCore.Mvc;
 using GymApi.Data.Request.Exercise;
-using GymApi.Data.Request.Workout;
+using GymApi.Services;
 
 namespace GymApi.Controllers;
 
@@ -12,42 +8,33 @@ namespace GymApi.Controllers;
 [Route("/exercicios")]
 public class ExerciseController: ControllerBase
 {
-    public readonly GymContext _context;
-    public readonly IMapper _mapper;
+    public readonly IExerciseService _exerciseService;
 
-    public ExerciseController(GymContext context, IMapper mapper)
+    public ExerciseController(IExerciseService exerciseService)
     {
-        _context = context;
-        _mapper = mapper;
+        _exerciseService = exerciseService;
     }
 
     [HttpGet]
     public IActionResult GetAllExercises()
     {
-        var exercisesToList = _context.Exercises.ToList();
-        var map = _mapper.Map<IList<ReadExerciseDto>>(exercisesToList);
-
-        return Ok(map);
+        var exercises = _exerciseService.FindAll();
+        return Ok(exercises);
     }
 
     [HttpGet("{exerciseId}")]
     public IActionResult GetExerciseById(int exerciseId)
     {
-        var exercise = _context.Exercises.Find(exerciseId);
-        if (exercise == null) return NotFound();
+        var exercise = _exerciseService.FindById(exerciseId);
 
-        var map = _mapper.Map<ReadExerciseDto>(exercise);
-        return Ok(map);
+        return Ok(exercise);
     }
 
     [HttpPost]
     [ProducesResponseType(typeof(CreateExerciseDto), StatusCodes.Status201Created)]
     public IActionResult CreateExercise([FromBody] CreateExerciseDto createExerciseDto)
     {
-        var exercise = _mapper.Map<Exercise>(createExerciseDto);
-
-        _context.Exercises.Add(exercise);
-        _context.SaveChanges();
+        var exercise = _exerciseService.Create(createExerciseDto);
 
         return CreatedAtAction(
             nameof(GetExerciseById),
@@ -58,13 +45,7 @@ public class ExerciseController: ControllerBase
     [HttpPut("{exerciseId}")]
     public IActionResult UpdateExercise(int exerciseId, [FromBody] UpdateExerciseDto updateExerciseDto)
     {
-        var exercise = _context.Exercises
-            .FirstOrDefault(exercise => exercise.Id == exerciseId);
-
-        if (exercise is null) return NotFound();
-
-        _mapper.Map(updateExerciseDto, exercise);
-        _context.SaveChanges();
+        _exerciseService.UpdateById(updateExerciseDto, exerciseId);
 
         return NoContent();
     }
@@ -72,11 +53,7 @@ public class ExerciseController: ControllerBase
     [HttpDelete("{exerciseId}")]
     public IActionResult DeleteExercise(int exerciseId)
     {
-        var exercise = _context.Exercises.Find(exerciseId);
-        if (exercise == null) return NotFound();
-
-        _context.Exercises.Remove(exercise);
-        _context.SaveChanges();
+        _exerciseService.DeleteById(exerciseId);
 
         return Ok();
     }

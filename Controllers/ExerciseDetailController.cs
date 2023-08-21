@@ -3,7 +3,7 @@ using GymApi.Data;
 using GymApi.Data.Request.ExerciseDetail;
 using GymApi.Data.Request.Workout;
 using GymApi.Data.Response.ExerciseDetail;
-using GymApi.Models;
+using GymApi.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,23 +22,39 @@ public class ExerciseDetailController : ControllerBase
         _mapper = mapper;
     }
 
-    [HttpGet]
-    public IActionResult GetAllClientExerciseDetails(int clientId, int workoutId)
+    public GymClient _getGymClientById(int clientId)
     {
-        var client = _context.GymClients
+        return _context.GymClients
             .Include(client => client.Workouts)
             .ThenInclude(workout => workout.ExerciseDetails)
             .FirstOrDefault(client => client.Id == clientId);
+    }
+    public Workout _getWorkoutById(int workoutId, GymClient client)
+    {
+        return client
+            .Workouts
+            .FirstOrDefault(workout => workout.Id == workoutId);
+    }
+    public ExerciseDetail _getExerciseDetailById(int exerciseDetailId, Workout workout)
+    {
+        return workout
+            .ExerciseDetails
+            .FirstOrDefault(exerciseDetail => exerciseDetail.Id == exerciseDetailId);
+    }
+
+    [HttpGet]
+    public IActionResult GetAllClientExerciseDetails(int clientId, int workoutId)
+    {
+        var client = _getGymClientById(clientId);
         if (client == null) return NotFound();
 
-        var workout = client.Workouts
-            .FirstOrDefault(workout => workout.Id == workoutId);
+        var workout = _getWorkoutById(workoutId, client);
         if (workout == null) return NotFound();
 
         var exerciseDetail = workout.ExerciseDetails;
         if (exerciseDetail == null) return NotFound();
 
-        var map = _mapper.Map<IList<ReadExerciseDetailDto>>(exerciseDetail);
+        
 
         return Ok(map);
     }
@@ -46,20 +62,13 @@ public class ExerciseDetailController : ControllerBase
     [HttpGet("{exerciseDetailId}")]
     public IActionResult GetClientExerciseDetailsById(int clientId, int workoutId, int exerciseDetailId)
     {
-        var client = _context.GymClients
-            .Include(client => client.Workouts)
-            .ThenInclude(workout => workout.ExerciseDetails)
-            .FirstOrDefault(client => client.Id == clientId);
+        var client = _getGymClientById(clientId);
         if (client == null) return NotFound();
 
-        var workout = client
-            .Workouts
-            .FirstOrDefault(workout => workout.Id == workoutId);
+        var workout = _getWorkoutById(workoutId, client);
         if (workout == null) return NotFound();
 
-        var exerciseDetail = workout
-            .ExerciseDetails
-            .FirstOrDefault(exerciseDetail => exerciseDetail.Id == exerciseDetailId);
+        var exerciseDetail = _getExerciseDetailById(exerciseDetailId, workout);
         if (exerciseDetail == null) return NotFound();
 
         var map = _mapper.Map<ReadExerciseDetailDto>(exerciseDetail);
@@ -71,14 +80,10 @@ public class ExerciseDetailController : ControllerBase
     [ProducesResponseType(typeof(CreateExerciseDetailDto), StatusCodes.Status201Created)]
     public IActionResult CreateClientExerciseDetails(int clientId, int workoutId, [FromBody] CreateExerciseDetailDto exerciseDetailDto)
     {
-        var client = _context.GymClients
-            .Include(client => client.Workouts)
-            .ThenInclude(workouts => workouts.ExerciseDetails)
-            .FirstOrDefault(client => client.Id == clientId);
+        var client = _getGymClientById(clientId);
         if (client == null) return NotFound();
 
-        var workout = client.Workouts
-            .FirstOrDefault(workout => workout.Id == workoutId);
+        var workout = _getWorkoutById(workoutId, client);
         if (workout == null) return NotFound();
 
         var exerciseDetail = _mapper.Map<ExerciseDetail>(exerciseDetailDto);
@@ -95,17 +100,13 @@ public class ExerciseDetailController : ControllerBase
     [HttpPut("{exerciseDetailId}")]
     public IActionResult UpdateClientExerciseDetail(int clientId, int workoutId, int exerciseDetailId, [FromBody] UpdateExerciseDetailDto updateExerciseDetailDto)
     {
-        var client = _context.GymClients
-            .Include(client => client.Workouts)
-            .ThenInclude(workouts => workouts.ExerciseDetails)
-            .FirstOrDefault(client => client.Id == clientId);
-
+        var client = _getGymClientById(clientId);
         if (client is null) return NotFound();
 
-        var workout = client.Workouts.FirstOrDefault(workout => workout.Id == workoutId);
+        var workout = _getWorkoutById(workoutId, client);
         if (workout is null) return NotFound();
 
-        var exerciseDetail = workout.ExerciseDetails.FirstOrDefault(exerciseDetail => exerciseDetail.Id == exerciseDetailId);
+        var exerciseDetail = _getExerciseDetailById(exerciseDetailId, workout);
         if (exerciseDetail is null) return NotFound();
 
         _mapper.Map(updateExerciseDetailDto, exerciseDetail);
@@ -117,19 +118,13 @@ public class ExerciseDetailController : ControllerBase
     [HttpDelete("{exerciseDetailId}")]
     public IActionResult DeleteExerciseDetail(int clientId, int workoutId, int exerciseDetailId)
     {
-        var client = _context.GymClients
-                .Include(client => client.Workouts)
-                .ThenInclude(workout => workout.ExerciseDetails)
-                .FirstOrDefault(client => client.Id == clientId);
+        var client = _getGymClientById(clientId);
         if (client == null) return NotFound();
 
-        var workout = client.Workouts
-            .FirstOrDefault(workout => workout.Id == workoutId);
+        var workout = _getWorkoutById(workoutId, client);
         if (workout == null) return NotFound();
 
-        var exerciseDetail = workout
-            .ExerciseDetails
-            .FirstOrDefault(exerciseDetail => exerciseDetail.Id == exerciseDetailId);
+        var exerciseDetail = _getExerciseDetailById(exerciseDetailId, workout);
         if (exerciseDetail == null) return NotFound();
 
         workout.ExerciseDetails.Remove(exerciseDetail);
@@ -137,4 +132,5 @@ public class ExerciseDetailController : ControllerBase
 
         return Ok(workout);
     }
+
 }

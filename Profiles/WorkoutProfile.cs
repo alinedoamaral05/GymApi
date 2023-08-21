@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using GymApi.Data.Request.Workout;
 using GymApi.Data.Response.Workout;
-using GymApi.Models;
+using GymApi.Domain.Models;
 
 namespace GymApi.Profiles;
 

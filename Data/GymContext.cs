@@ -1,4 +1,4 @@
-﻿using GymApi.Models;
+﻿using GymApi.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace GymApi.Data;

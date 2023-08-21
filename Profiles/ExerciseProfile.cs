@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using GymApi.Data.Request.Exercise;
 using GymApi.Data.Response.Exercise;
-using GymApi.Models;
+using GymApi.Domain.Models;
 
 namespace GymApi.Profiles;
 
@@ -12,5 +12,6 @@ public class ExerciseProfile: Profile
         CreateMap<CreateExerciseDto, Exercise>();
         CreateMap<Exercise, ReadExerciseDto>();
         CreateMap<UpdateExerciseDto, Exercise>();
+        CreateMap<UpdateExerciseDto, CreateExerciseDto>();
     }
 }
