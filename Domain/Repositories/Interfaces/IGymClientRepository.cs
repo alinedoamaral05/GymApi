@@ -6,7 +6,7 @@ public interface IGymClientRepository
 {
     GymClient Create(GymClient gymClient);
     GymClient Update(GymClient gymClient);
-    GymClient DeleteById(int id);
+    void Delete(GymClient gymClient);
     GymClient FindById(int id);
     ICollection<GymClient> FindAll();
 }

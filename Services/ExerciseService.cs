@@ -3,6 +3,7 @@ using GymApi.Data.Request.Exercise;
 using GymApi.Data.Response.Exercise;
 using GymApi.Domain.Models;
 using GymApi.Domain.Repositories.Interfaces;
+using GymApi.Exceptions;
 
 namespace GymApi.Services;
 
@@ -28,7 +29,7 @@ public class ExerciseService : IExerciseService
     public void DeleteById(int id)
     {
         var exercise = _exerciseRepository.FindById(id)
-            ?? throw new Exception();
+            ?? throw new NotFoundException();
 
         _exerciseRepository.Delete(exercise);
     }
@@ -43,8 +44,10 @@ public class ExerciseService : IExerciseService
 
     public ReadExerciseDto FindById(int id)
     {
-        var exercise = _exerciseRepository.FindById(id);
+        var exercise = _exerciseRepository.FindById(id)
+             ?? throw new NotFoundException();
         var map = _mapper.Map<ReadExerciseDto>(exercise);
+
 
         return map;
     }

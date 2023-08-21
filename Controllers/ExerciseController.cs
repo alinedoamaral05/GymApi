@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using GymApi.Data.Request.Exercise;
 using GymApi.Services;
+using GymApi.Exceptions;
 
 namespace GymApi.Controllers;
 
@@ -25,9 +26,18 @@ public class ExerciseController: ControllerBase
     [HttpGet("{exerciseId}")]
     public IActionResult GetExerciseById(int exerciseId)
     {
-        var exercise = _exerciseService.FindById(exerciseId);
+        try
+        {
+            var exercise = _exerciseService.FindById(exerciseId);
 
-        return Ok(exercise);
+            return Ok(exercise);
+        }
+        catch (Exception ex)
+        {
+            if (ex is NotFoundException) return NotFound(ex.Message);
+            return Problem(ex.Message);
+        }
+
     }
 
     [HttpPost]
@@ -53,9 +63,18 @@ public class ExerciseController: ControllerBase
     [HttpDelete("{exerciseId}")]
     public IActionResult DeleteExercise(int exerciseId)
     {
-        _exerciseService.DeleteById(exerciseId);
+        try
+        {
+            _exerciseService.DeleteById(exerciseId);
 
-        return Ok();
+            return NoContent();
+        }
+        catch (Exception ex)
+        {
+            if (ex is NotFoundException) return NotFound(ex.Message);
+            return Problem(ex.Message);
+        }
+
     }
 }
 
