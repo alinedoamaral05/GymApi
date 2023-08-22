@@ -3,6 +3,7 @@ using GymApi.Data;
 using GymApi.Data.Request.Workout;
 using GymApi.Data.Response.Workout;
 using GymApi.Domain.Models;
+using GymApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,9 +12,13 @@ namespace GymApi.Controllers;
 [ApiController]
 [Route("alunos/{clientId}/treinos")]
 public class WorkoutController : ControllerBase
-{
-    public readonly GymContext _context;
-    public readonly IMapper _mapper;
+{    
+    private readonly IWorkoutService _workoutService;
+
+    public WorkoutController(IWorkoutService workoutService)
+    {
+        _workoutService = workoutService;
+    }
 
     public WorkoutController(GymContext context, IMapper mapper)
     {

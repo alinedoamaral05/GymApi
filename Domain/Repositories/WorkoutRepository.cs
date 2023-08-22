@@ -1,6 +1,7 @@
 ﻿using GymApi.Data;
 using GymApi.Domain.Models;
 using GymApi.Domain.Repositories.Interfaces;
+using GymApi.Exceptions;
 using Microsoft.EntityFrameworkCore;
 
 namespace GymApi.Domain.Repositories;
@@ -16,45 +17,36 @@ public class WorkoutRepository : IWorkoutRepository
 
     public Workout Create(Workout workout)
     {
-        
+        _context.Workouts.Add(workout);
+        _context.SaveChanges();
+        return workout;
 
     }
 
-    public void DeleteById(int clientId, Workout workout)
-    {
-        var client = _context.GymClients
-            .Include(client => client.Workouts)
-            .FirstOrDefault(client => client.Id == clientId);
-        
-        client.Workouts.Remove(workout);
+    public void Delete(Workout workout)
+    {        
+        _context.Workouts.Remove(workout);
+        _context.SaveChanges();
 
     }
 
-    public ICollection<Workout> FindAll(int clientId)
+    public ICollection<Workout> FindByClient(int clientId)
     {
-        var client = _context.GymClients
-            .Include(client => client.Workouts)
-            .FirstOrDefault(client => client.Id == clientId);
-
-        var workouts = client.Workouts;
+        var workouts = _context.Workouts.Where(workout => workout.GymClientId == clientId).ToList();
 
         return workouts;
     }
 
-    public Workout FindById(int clientId, int id)
+    public Workout FindById(int id)
     {
-        var client = _context.GymClients
-            .Include(client => client.Workouts)
-            .FirstOrDefault(client => client.Id == clientId);
-
-        var workout = client.Workouts
-            .FirstOrDefault(workout => workout.Id == id);
-
+        var workout = _context.Workouts.FirstOrDefault(workout => workout.Id == id)
+            ?? throw new NotFoundException();
         return workout;
     }
 
     public Workout Update(Workout workout)
     {
-        throw new NotImplementedException();
+        _context.Workouts.Update(workout);
+        _context.SaveChanges();
     }
 }

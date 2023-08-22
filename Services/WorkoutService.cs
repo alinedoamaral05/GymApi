@@ -2,6 +2,7 @@
 using GymApi.Data.Request.Workout;
 using GymApi.Data.Response.Workout;
 using GymApi.Domain.Models;
+using GymApi.Domain.Repositories;
 using GymApi.Domain.Repositories.Interfaces;
 using GymApi.Exceptions;
 
@@ -22,27 +23,26 @@ public class WorkoutService : IWorkoutService
         throw new NotImplementedException();
     }
 
-    public void DeleteById(int clientId, int id)
+    public void DeleteById(int id)
     {
-        var workout = _workoutRepository.FindById(clientId, id)
+        var workout = _workoutRepository.FindById(id)
             ?? throw new NotFoundException();
 
-        _workoutRepository.DeleteById(clientId, workout);
+        _workoutRepository.Delete(workout);
     }
 
-    public ICollection<ReadWorkoutDto> FindAll(int clientId)
+    public ICollection<ReadWorkoutDto> FindByClient(int clientId)
     {
-        var workouts = _workoutRepository.FindAll(clientId)
+        var workouts = _workoutRepository.FindByClient(clientId)
             ?? throw new NotFoundException();
 
         var readWorkouts = _mapper.Map<ICollection<ReadWorkoutDto>>(workouts);
 
         return readWorkouts;
     }
-
-    public ReadWorkoutDto FindById(int clientId, int id)
+    public ReadWorkoutDto FindById(int id)
     {
-        var workout = _workoutRepository.FindById(clientId, id)
+        var workout = _workoutRepository.FindById(id)
         ?? throw new NotFoundException();
 
         var readWorkout = _mapper.Map<ReadWorkoutDto>(workout);
@@ -50,11 +50,21 @@ public class WorkoutService : IWorkoutService
         return readWorkout;
     }
 
-    public ReadWorkoutDto UpdateById(UpdateWorkoutDto dto, int clientId, int id)
+    public ReadWorkoutDto UpdateById(UpdateWorkoutDto dto, int id)
     {
         var workout = _workoutRepository.FindById(id);
+        if (workout == null)
+        {
+            var newWorkout = _mapper.Map<CreateWorkoutDto>(dto);
+            return Create(newWorkout);
+        }
 
-        var workout = _mapper.Map<Workout>(dto)
+        _mapper.Map(dto, workout);
+        _workoutRepository.Update(workout);
+        var readworkout = _mapper.Map<ReadWorkoutDto>(workout);
+        return readworkout;       
+              
             
     }
+
 }
