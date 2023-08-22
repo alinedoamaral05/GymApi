@@ -1,10 +1,8 @@
 using GymApi.Data;
-using GymApi.Domain.Repositories;
 using GymApi.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +13,8 @@ builder.Services.AddDbContext<GymContext>(options => options.UseSqlServer(connec
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddScoped<IExerciseService, ExerciseService>();
+builder.Services.AddScoped<IGymClientService, GymClientService>();
+builder.Services.AddScoped<IWorkoutService, WorkoutService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

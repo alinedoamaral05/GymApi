@@ -1,9 +1,5 @@
-﻿using AutoMapper;
-using GymApi.Data;
-using GymApi.Data.Request.GymClient;
-using GymApi.Data.Request.Workout;
-using GymApi.Data.Response.GymClient;
-using GymApi.Domain.Models;
+﻿using GymApi.Data.Request.GymClient;
+using GymApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GymApi.Controllers;
@@ -12,42 +8,31 @@ namespace GymApi.Controllers;
 [Route("/alunos")]
 public class GymClientController : ControllerBase
 {
-    public readonly GymContext _context;
-    public readonly IMapper _mapper;
+    public readonly IGymClientService _gymClientService;
 
-    public GymClientController(GymContext context, IMapper mapper)
+    public GymClientController(IGymClientService gymClientService)
     {
-        _context = context;
-        _mapper = mapper;
+        _gymClientService = gymClientService;
     }
 
     [HttpGet]
     public IActionResult GetAllGymClient()
     {
-        var clientsToList = _context.GymClients.ToList();
-        var map = _mapper.Map<IList<ReadGymClientDto>>(clientsToList);
-
-        return Ok(map);
+        return Ok(_gymClientService.FindAll());
     }
 
     [HttpGet("{clientId}")]
     public IActionResult GetGymClientById(int clientId)
     {
-        var client = _context.GymClients.Find(clientId);
-        if (client == null) return NotFound();
-
-        var map = _mapper.Map<ReadGymClientDto>(client);
-        return Ok(map);
+        
+        return Ok(_gymClientService.FindById(clientId));
     }
 
     [HttpPost]
     [ProducesResponseType(typeof(CreateGymClientDto), StatusCodes.Status201Created)]
     public IActionResult CreateGymClient([FromBody] CreateGymClientDto createGymClientDto)
     {
-        var client = _mapper.Map<GymClient>(createGymClientDto);
-
-        _context.GymClients.Add(client);
-        _context.SaveChanges();
+        var client = _gymClientService.Create(createGymClientDto);
 
         return CreatedAtAction(
             nameof(GetGymClientById),
@@ -58,13 +43,7 @@ public class GymClientController : ControllerBase
     [HttpPut("{clientId}")]
     public IActionResult UpdateGymClient(int clientId, [FromBody] UpdateGymClientDto updateGymClientDto)
     {
-        var client = _context.GymClients
-            .FirstOrDefault(client => client.Id == clientId);
-
-        if (client is null) return NotFound();
-
-        _mapper.Map(updateGymClientDto, client);
-        _context.SaveChanges();
+        _gymClientService.UpdateById(updateGymClientDto, clientId);
 
         return NoContent();
     }
@@ -72,11 +51,7 @@ public class GymClientController : ControllerBase
     [HttpDelete("{clientId}")]
     public IActionResult DeleteGymClient(int clientId)
     {
-        var client = _context.GymClients.Find(clientId);
-        if (client == null) return NotFound();
-
-        _context.GymClients.Remove(client);
-        _context.SaveChanges();
+        _gymClientService.DeleteById(clientId);
 
         return Ok();
     }

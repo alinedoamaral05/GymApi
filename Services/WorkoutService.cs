@@ -1,32 +1,60 @@
-﻿using GymApi.Data.Request.Workout;
+﻿using AutoMapper;
+using GymApi.Data.Request.Workout;
 using GymApi.Data.Response.Workout;
+using GymApi.Domain.Models;
+using GymApi.Domain.Repositories.Interfaces;
+using GymApi.Exceptions;
 
 namespace GymApi.Services;
 
 public class WorkoutService : IWorkoutService
 {
+    private readonly IWorkoutRepository _workoutRepository;
+    private readonly IMapper _mapper;
+
+    public WorkoutService(IWorkoutRepository workoutRepository, IMapper mapper)
+    {
+        _workoutRepository = workoutRepository;
+        _mapper = mapper;
+    }
     public ReadWorkoutDto Create(CreateWorkoutDto dto)
     {
         throw new NotImplementedException();
     }
 
-    public ReadWorkoutDto DeleteById(int id)
+    public void DeleteById(int clientId, int id)
     {
-        throw new NotImplementedException();
+        var workout = _workoutRepository.FindById(clientId, id)
+            ?? throw new NotFoundException();
+
+        _workoutRepository.DeleteById(clientId, workout);
     }
 
-    public ICollection<ReadWorkoutDto> FindAll()
+    public ICollection<ReadWorkoutDto> FindAll(int clientId)
     {
-        throw new NotImplementedException();
+        var workouts = _workoutRepository.FindAll(clientId)
+            ?? throw new NotFoundException();
+
+        var readWorkouts = _mapper.Map<ICollection<ReadWorkoutDto>>(workouts);
+
+        return readWorkouts;
     }
 
-    public ReadWorkoutDto FindById(int id)
+    public ReadWorkoutDto FindById(int clientId, int id)
     {
-        throw new NotImplementedException();
+        var workout = _workoutRepository.FindById(clientId, id)
+        ?? throw new NotFoundException();
+
+        var readWorkout = _mapper.Map<ReadWorkoutDto>(workout);
+
+        return readWorkout;
     }
 
-    public ReadWorkoutDto UpdateById(UpdateWorkoutDto dto, int id)
+    public ReadWorkoutDto UpdateById(UpdateWorkoutDto dto, int clientId, int id)
     {
-        throw new NotImplementedException();
+        var workout = _workoutRepository.FindById(id);
+
+        var workout = _mapper.Map<Workout>(dto)
+            
     }
 }

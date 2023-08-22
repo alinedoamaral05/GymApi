@@ -1,14 +1,13 @@
 ﻿using GymApi.Data.Request.Workout;
 using GymApi.Data.Response.Workout;
 
-namespace GymApi.Services
+namespace GymApi.Services;
+
+public interface IWorkoutService
 {
-    public interface IWorkoutService
-    {
-        ReadWorkoutDto Create(CreateWorkoutDto dto);
-        ReadWorkoutDto UpdateById(UpdateWorkoutDto dto, int id);
-        ReadWorkoutDto DeleteById(int id);
-        ReadWorkoutDto FindById(int id);
-        ICollection<ReadWorkoutDto> FindAll();
-    }
+    ReadWorkoutDto Create(CreateWorkoutDto dto);
+    ReadWorkoutDto UpdateById(UpdateWorkoutDto dto, int id);
+    void DeleteById(int clientId, int id);
+    ReadWorkoutDto FindById(int clientId, int id);
+    ICollection<ReadWorkoutDto> FindAll();
 }

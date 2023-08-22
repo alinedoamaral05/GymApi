@@ -12,5 +12,6 @@ public class GymClientProfile: Profile
         CreateMap<CreateGymClientDto, GymClient>();
         CreateMap<GymClient, ReadGymClientDto>();
         CreateMap<UpdateGymClientDto, GymClient>();
+        CreateMap<UpdateGymClientDto, CreateGymClientDto>();
     }
 }

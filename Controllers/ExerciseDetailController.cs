@@ -4,6 +4,8 @@ using GymApi.Data.Request.ExerciseDetail;
 using GymApi.Data.Request.Workout;
 using GymApi.Data.Response.ExerciseDetail;
 using GymApi.Domain.Models;
+using GymApi.Domain.Repositories.Interfaces;
+using GymApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,34 +15,13 @@ namespace GymApi.Controllers;
 [Route("/alunos/{clientId}/treinos/{workoutId}/detalhesExercicio")]
 public class ExerciseDetailController : ControllerBase
 {
-    public readonly GymContext _context;
-    public readonly IMapper _mapper;
+    public readonly IGymClientService _gymClientService;
 
-    public ExerciseDetailController(GymContext context, IMapper mapper)
+    public ExerciseDetailController(IGymClientService gymClientService)
     {
-        _context = context;
-        _mapper = mapper;
+        _gymClientService = gymClientService;
     }
 
-    public GymClient _getGymClientById(int clientId)
-    {
-        return _context.GymClients
-            .Include(client => client.Workouts)
-            .ThenInclude(workout => workout.ExerciseDetails)
-            .FirstOrDefault(client => client.Id == clientId);
-    }
-    public Workout _getWorkoutById(int workoutId, GymClient client)
-    {
-        return client
-            .Workouts
-            .FirstOrDefault(workout => workout.Id == workoutId);
-    }
-    public ExerciseDetail _getExerciseDetailById(int exerciseDetailId, Workout workout)
-    {
-        return workout
-            .ExerciseDetails
-            .FirstOrDefault(exerciseDetail => exerciseDetail.Id == exerciseDetailId);
-    }
 
     [HttpGet]
     public IActionResult GetAllClientExerciseDetails(int clientId, int workoutId)

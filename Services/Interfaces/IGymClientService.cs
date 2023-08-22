@@ -1,14 +1,13 @@
 ﻿using GymApi.Data.Request.GymClient;
 using GymApi.Data.Response.GymClient;
 
-namespace GymApi.Services
+namespace GymApi.Services;
+
+public interface IGymClientService
 {
-    public interface IGymClientService
-    {
-        ReadGymClientDto Create(CreateGymClientDto dto);
-        ReadGymClientDto UpdateById(UpdateGymClientDto dto, int id);
-        ReadGymClientDto DeleteById(int id);
-        ReadGymClientDto FindById(int id);
-        ICollection<ReadGymClientDto> FindAll();
-    }
+    ReadGymClientDto Create(CreateGymClientDto dto);
+    ReadGymClientDto UpdateById(UpdateGymClientDto dto, int id);
+    void DeleteById(int id);
+    ReadGymClientDto FindById(int id);
+    ICollection<ReadGymClientDto> FindAll();
 }

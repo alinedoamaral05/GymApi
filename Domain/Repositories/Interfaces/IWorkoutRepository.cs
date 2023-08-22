@@ -6,7 +6,7 @@ public interface IWorkoutRepository
 {
     Workout Create(Workout workout);
     Workout Update(Workout workout);
-    Workout DeleteById(int id);
-    Workout FindById(int id);
-    ICollection<Workout> FindAll();
+    void DeleteById(int clientId, Workout workout);
+    Workout FindById(int clientId, int id);
+    ICollection<Workout> FindAll(int clientId);
 }
