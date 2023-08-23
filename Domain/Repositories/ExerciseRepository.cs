@@ -12,6 +12,7 @@ public class ExerciseRepository: IExerciseRepository
     {
         _context = context;
     }
+    
     public Exercise Create(Exercise exercise)
     {
         _context.Exercises.Add(exercise);

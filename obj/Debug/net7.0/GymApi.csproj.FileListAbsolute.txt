@@ -1,78 +1,156 @@
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\GymApi.csproj.AssemblyReference.cache
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\GymApi.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\GymApi.AssemblyInfoInputs.cache
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\GymApi.AssemblyInfo.cs
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\GymApi.csproj.CoreCompileInputs.cache
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\GymApi.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\GymApi.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\appsettings.Development.json
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\appsettings.json
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\GymApi.exe
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\GymApi.deps.json
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\GymApi.runtimeconfig.json
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\GymApi.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\GymApi.pdb
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\AutoMapper.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Azure.Core.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Azure.Identity.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Humanizer.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Microsoft.Identity.Client.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Microsoft.OpenApi.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Mono.TextTemplating.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\System.CodeDom.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\System.Drawing.Common.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\System.Memory.Data.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\System.Runtime.Caching.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\System.Security.Permissions.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\System.Windows.Extensions.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\staticwebassets\msbuild.GymApi.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\staticwebassets\msbuild.build.GymApi.props
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.GymApi.props
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.GymApi.props
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\staticwebassets.pack.json
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\staticwebassets.build.json
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\staticwebassets.development.json
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\scopedcss\bundle\GymApi.styles.css
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\GymApi.csproj.CopyComplete
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\GymApi.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\refint\GymApi.dll
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\GymApi.pdb
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\GymApi.genruntimeconfig.cache
-C:\Users\Aline do Amaral\Desktop\RocketUpNet\GymApi\obj\Debug\net7.0\ref\GymApi.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/GymApi.csproj.AssemblyReference.cache
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/GymApi.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/GymApi.AssemblyInfoInputs.cache
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/GymApi.AssemblyInfo.cs
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/GymApi.csproj.CoreCompileInputs.cache
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/GymApi.MvcApplicationPartsAssemblyInfo.cs
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/GymApi.MvcApplicationPartsAssemblyInfo.cache
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/appsettings.Development.json
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/appsettings.json
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/GymApi.exe
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/GymApi.deps.json
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/GymApi.runtimeconfig.json
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/GymApi.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/GymApi.pdb
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/AutoMapper.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Azure.Core.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Azure.Identity.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Humanizer.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Microsoft.AspNetCore.OpenApi.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Microsoft.Bcl.AsyncInterfaces.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Microsoft.Data.SqlClient.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Design.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Relational.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.SqlServer.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Microsoft.Extensions.DependencyModel.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Microsoft.Identity.Client.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Microsoft.Identity.Client.Extensions.Msal.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Microsoft.IdentityModel.Abstractions.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Microsoft.OpenApi.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Microsoft.SqlServer.Server.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Microsoft.Win32.SystemEvents.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Mono.TextTemplating.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Swashbuckle.AspNetCore.Swagger.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/System.CodeDom.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/System.Configuration.ConfigurationManager.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/System.Drawing.Common.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/System.Memory.Data.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/System.Runtime.Caching.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/System.Security.Cryptography.ProtectedData.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/System.Security.Permissions.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/System.Windows.Extensions.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/bin/Debug/net7.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/staticwebassets/msbuild.GymApi.Microsoft.AspNetCore.StaticWebAssets.props
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/staticwebassets/msbuild.build.GymApi.props
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.GymApi.props
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.GymApi.props
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/staticwebassets.pack.json
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/staticwebassets.build.json
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/staticwebassets.development.json
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/scopedcss/bundle/GymApi.styles.css
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/GymApi.csproj.CopyComplete
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/GymApi.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/refint/GymApi.dll
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/GymApi.pdb
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/GymApi.genruntimeconfig.cache
+C:/Users/Aline do Amaral/Desktop/RocketUpNet/GymApi/obj/Debug/net7.0/ref/GymApi.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/appsettings.Development.json
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/appsettings.json
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/GymApi
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/GymApi.deps.json
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/GymApi.runtimeconfig.json
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/GymApi.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/GymApi.pdb
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/AutoMapper.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Azure.Core.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Azure.Identity.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Humanizer.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Microsoft.AspNetCore.OpenApi.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Microsoft.Bcl.AsyncInterfaces.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Microsoft.Data.SqlClient.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Design.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Relational.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.SqlServer.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Microsoft.Extensions.DependencyModel.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Microsoft.Identity.Client.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Microsoft.Identity.Client.Extensions.Msal.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Microsoft.IdentityModel.Abstractions.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Microsoft.OpenApi.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Microsoft.SqlServer.Server.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Microsoft.Win32.SystemEvents.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Mono.TextTemplating.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Swashbuckle.AspNetCore.Swagger.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/System.CodeDom.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/System.Configuration.ConfigurationManager.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/System.Drawing.Common.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/System.Memory.Data.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/System.Runtime.Caching.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/System.Security.Cryptography.ProtectedData.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/System.Security.Permissions.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/System.Windows.Extensions.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/bin/Debug/net7.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/GymApi.csproj.AssemblyReference.cache
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/GymApi.GeneratedMSBuildEditorConfig.editorconfig
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/GymApi.AssemblyInfoInputs.cache
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/GymApi.AssemblyInfo.cs
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/GymApi.csproj.CoreCompileInputs.cache
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/GymApi.MvcApplicationPartsAssemblyInfo.cs
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/GymApi.MvcApplicationPartsAssemblyInfo.cache
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/staticwebassets/msbuild.GymApi.Microsoft.AspNetCore.StaticWebAssets.props
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/staticwebassets/msbuild.build.GymApi.props
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.GymApi.props
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.GymApi.props
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/staticwebassets.pack.json
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/staticwebassets.build.json
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/staticwebassets.development.json
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/scopedcss/bundle/GymApi.styles.css
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/GymApi.csproj.CopyComplete
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/GymApi.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/refint/GymApi.dll
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/GymApi.pdb
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/GymApi.genruntimeconfig.cache
+/home/sindba/Documentos/Vortigo/Github/Aline/GymApi/obj/Debug/net7.0/ref/GymApi.dll

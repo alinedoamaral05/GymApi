@@ -27,12 +27,12 @@ public class ExerciseController : ControllerBase
         catch (Exception ex) { return Problem(ex.Message); }
     }
 
-    [HttpGet("{exerciseId}")]
-    public IActionResult GetExerciseById(int exerciseId)
+    [HttpGet("{id}")]
+    public IActionResult GetExerciseById(int id)
     {
         try
         {
-            var exercise = _exerciseService.FindById(exerciseId);
+            var exercise = _exerciseService.FindById(id);
             return Ok(exercise);
         }
         catch (Exception ex)
@@ -53,14 +53,18 @@ public class ExerciseController : ControllerBase
             return CreatedAtAction(
                 nameof(GetExerciseById),
                 new { id = exercise.Id },
-                exercise);
-
+                exercise
+            );
         }
+
         catch (Exception ex) { return Problem(ex.Message); }
     }
 
     [HttpPut("{exerciseId}")]
-    public IActionResult UpdateExercise(int exerciseId, [FromBody] UpdateExerciseDto updateExerciseDto)
+    public IActionResult UpdateExercise(
+        int exerciseId, 
+        [FromBody] UpdateExerciseDto updateExerciseDto
+    )
     {
         _exerciseService.UpdateById(updateExerciseDto, exerciseId);
         return NoContent();

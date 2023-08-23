@@ -12,11 +12,15 @@ public class ExerciseService : IExerciseService
     private readonly IMapper _mapper;
     private readonly IExerciseRepository _exerciseRepository;
 
-    public ExerciseService(IMapper mapper, IExerciseRepository exerciseRepository)
+    public ExerciseService(
+        IMapper mapper,
+        IExerciseRepository exerciseRepository
+    )
     {
         _mapper = mapper;
         _exerciseRepository = exerciseRepository;
     }
+
     public ReadExerciseDto Create(CreateExerciseDto dto)
     {
         var exercise = _mapper.Map<Exercise>(dto);

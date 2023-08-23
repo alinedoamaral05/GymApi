@@ -20,49 +20,76 @@ public class WorkoutService : IWorkoutService
     }
     public ReadWorkoutDto Create(CreateWorkoutDto dto)
     {
-        throw new NotImplementedException();
+        var workout = _mapper
+            .Map<Workout>(dto);
+
+        _workoutRepository
+            .Create(workout);
+
+        var readWorkout = _mapper
+            .Map<ReadWorkoutDto>(workout);
+        
+        return readWorkout;
     }
 
     public void DeleteById(int id)
     {
-        var workout = _workoutRepository.FindById(id)
+        var workout = _workoutRepository
+            .FindById(id)
             ?? throw new NotFoundException();
 
-        _workoutRepository.Delete(workout);
+        _workoutRepository
+            .Delete(workout);
     }
 
     public ICollection<ReadWorkoutDto> FindByClient(int clientId)
     {
-        var workouts = _workoutRepository.FindByClient(clientId)
+        var workouts = _workoutRepository
+            .FindByClient(clientId)
             ?? throw new NotFoundException();
 
-        var readWorkouts = _mapper.Map<ICollection<ReadWorkoutDto>>(workouts);
+        var readWorkouts = _mapper
+            .Map<ICollection<ReadWorkoutDto>>(workouts);
 
         return readWorkouts;
     }
     public ReadWorkoutDto FindById(int id)
     {
-        var workout = _workoutRepository.FindById(id)
-        ?? throw new NotFoundException();
+        var workout = _workoutRepository
+            .FindById(id)
+            ?? throw new NotFoundException();
 
-        var readWorkout = _mapper.Map<ReadWorkoutDto>(workout);
+        var readWorkout = _mapper
+            .Map<ReadWorkoutDto>(workout);
 
         return readWorkout;
     }
 
-    public ReadWorkoutDto UpdateById(UpdateWorkoutDto dto, int id)
+    public ReadWorkoutDto UpdateById(
+        UpdateWorkoutDto dto,
+        int id
+    )
     {
-        var workout = _workoutRepository.FindById(id);
+        var workout = _workoutRepository
+            .FindById(id);
+        
         if (workout == null)
         {
-            var newWorkout = _mapper.Map<CreateWorkoutDto>(dto);
+            var newWorkout = _mapper
+                .Map<CreateWorkoutDto>(dto);
+            
             return Create(newWorkout);
         }
 
-        _mapper.Map(dto, workout);
-        _workoutRepository.Update(workout);
-        var readworkout = _mapper.Map<ReadWorkoutDto>(workout);
+        _mapper
+            .Map(dto, workout);
 
-        return readworkout;               
+        _workoutRepository
+            .Update(workout);
+
+        var readWorkout = _mapper
+            .Map<ReadWorkoutDto>(workout);
+
+        return readWorkout;               
     }
 }

@@ -11,6 +11,7 @@ public class WorkoutProfile: Profile
     {
         CreateMap<CreateWorkoutDto, Workout>();
         CreateMap<UpdateWorkoutDto, Workout>();
+        CreateMap<UpdateWorkoutDto, CreateWorkoutDto>();
         CreateMap<Workout, ReadWorkoutDto>();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using GymApi.Data.Request.Workout;
+using GymApi.Exceptions;
 using GymApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,13 +17,14 @@ public class WorkoutController : ControllerBase
     }
 
     [HttpGet("/alunos/{clientId}/treinos")]
-    public IActionResult GetWorkoutbyGymClient(int clientId)
+    public IActionResult GetWorkoutByGymClient(int clientId)
     {
         try
         {
             var workouts = _workoutService.FindByClient(clientId);
             return Ok(workouts);
         }
+
         catch (Exception ex) { return Problem(ex.Message); }
     }
 
@@ -31,44 +33,75 @@ public class WorkoutController : ControllerBase
     {
         try
         {
-            var workout = _workoutService.FindById(id);
+            var workout = _workoutService
+                .FindById(id);
+
             return Ok(workout);
         }
+
         catch (Exception ex) { return Problem(ex.Message); }
     }
 
-    [HttpPost]
+    [HttpPost()]
     [ProducesResponseType(typeof(CreateWorkoutDto), StatusCodes.Status201Created)]
-    public IActionResult CreateWorkout(int clientId, [FromBody] CreateWorkoutDto createWorkoutDto)
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
+    public IActionResult CreateWorkout(
+        [FromBody] CreateWorkoutDto createWorkoutDto
+    )
     {
         try
         {
-            var workout = _workoutService.Create(createWorkoutDto);
+            var workout = _workoutService
+                .Create(createWorkoutDto);
+            
             return CreatedAtAction(
                 nameof(GetWorkoutById),
                 new { id = workout.Id },
-                workout);
+                workout
+            );
         }
-        catch (Exception ex) { return Problem(ex.Message); }
+        
+        catch (Exception ex) 
+        {
+            if (ex is BadRequestException)
+                return BadRequest(ex.Message);
+
+            return Problem(ex.Message); 
+        }
     }
 
-    [HttpPut("{workoutId}")]
-    public IActionResult UpdateWorkout(int workoutId, [FromBody] UpdateWorkoutDto updateWorkoutDto)
+    [HttpPut("{id}")]
+    public IActionResult UpdateWorkout(
+        int id, 
+        [FromBody] UpdateWorkoutDto updateWorkoutDto
+    )
     {
         try
         {
-            _workoutService.UpdateById(updateWorkoutDto, workoutId);
+            _workoutService
+                .UpdateById(updateWorkoutDto, id);
+            
             return NoContent();
         }
-        catch (Exception ex) { return Problem(ex.Message); }
+        
+        catch (Exception ex) 
+        { 
+            if (ex is BadRequestException)
+                return BadRequest(ex.Message);
+
+            return Problem(ex.Message); 
+        }
     }
 
-    [HttpDelete("{workoutId}")]
-    public IActionResult DeleteWorkout(int workoutId)
+    [HttpDelete("{id}")]
+    public IActionResult DeleteWorkout(int id)
     {
         try
         {
-            _workoutService.DeleteById(workoutId);
+            _workoutService
+                .DeleteById(id);
+            
             return NoContent();
         }
         catch (Exception ex) { return Problem(ex.Message); }
