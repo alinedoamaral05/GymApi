@@ -1,14 +1,16 @@
 ﻿using AutoMapper;
 using GymApi.Data.Request.ExerciseDetail;
 using GymApi.Data.Response.ExerciseDetail;
+using GymApi.Domain.Models;
 using GymApi.Domain.Repositories.Interfaces;
+using GymApi.Exceptions;
 
 namespace GymApi.Services;
 
 public class ExerciseDetailService : IExerciseDetailService
 {
     private readonly IMapper _mapper;
-    private IExerciseDetailRepository _exerciseDetailRepository;
+    private readonly IExerciseDetailRepository _exerciseDetailRepository;
     public ExerciseDetailService(IMapper mapper, IExerciseDetailRepository exerciseDetailRepository)
     {
         _mapper = mapper;
@@ -16,28 +18,51 @@ public class ExerciseDetailService : IExerciseDetailService
     }
     public ReadExerciseDetailDto Create(CreateExerciseDetailDto dto)
     {
-        throw new NotImplementedException();
+        var detail = _mapper.Map<ExerciseDetail>(dto);
+        _exerciseDetailRepository.Create(detail);
+        var readDto = _mapper.Map<ReadExerciseDetailDto>(detail);
+
+        return readDto;
     }
 
-    public ReadExerciseDetailDto DeleteById(int id)
+    public void DeleteById(int id)
     {
-        throw new NotImplementedException();
+        var detail =_exerciseDetailRepository.FindById(id)
+            ?? throw new NotFoundException();
+        _exerciseDetailRepository.Delete(detail);
     }
 
-    public ICollection<ReadExerciseDetailDto> FindAll()
+    public ICollection<ReadExerciseDetailDto> FindByWorkout(int workoutId)
     {
-        var exercises = _exerciseDetailRepository.FindAll();
-        var map = _mapper.Map<IList<ReadExerciseDetailDto>>(exercises);
-        return map;
+        var exercises = _exerciseDetailRepository.FindByWorkout(workoutId)
+            ?? throw new NotFoundException();
+        var readDto = _mapper.Map<IList<ReadExerciseDetailDto>>(exercises);
+
+        return readDto;
     }
 
     public ReadExerciseDetailDto FindById(int id)
     {
-        throw new NotImplementedException();
+        var exercise = _exerciseDetailRepository.FindById(id)
+            ?? throw new NotFoundException();
+        var readDto = _mapper.Map<ReadExerciseDetailDto>(exercise);
+
+        return readDto;
     }
 
     public ReadExerciseDetailDto UpdateById(UpdateExerciseDetailDto dto, int id)
     {
-        throw new NotImplementedException();
+        var exercise = _exerciseDetailRepository.FindById(id);
+        if (exercise == null)
+        {
+            var newExerciseDetail = _mapper.Map<CreateExerciseDetailDto>(dto);
+            return Create(newExerciseDetail);
+        }
+        var updatedDetail = _mapper.Map(dto, exercise);
+        _exerciseDetailRepository.Update(updatedDetail);
+
+        var read = _mapper.Map<ReadExerciseDetailDto>(updatedDetail);
+
+        return read;
     }
 }

@@ -4,11 +4,11 @@ using GymApi.Domain.Models;
 
 namespace GymApi.Domain.Repositories;
 
-public class ExerciseRespository: IExerciseRepository
+public class ExerciseRepository: IExerciseRepository
 {
     private readonly GymContext _context;
 
-    public ExerciseRespository(GymContext context)
+    public ExerciseRepository(GymContext context)
     {
         _context = context;
     }

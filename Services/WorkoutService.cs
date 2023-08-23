@@ -62,9 +62,7 @@ public class WorkoutService : IWorkoutService
         _mapper.Map(dto, workout);
         _workoutRepository.Update(workout);
         var readworkout = _mapper.Map<ReadWorkoutDto>(workout);
-        return readworkout;       
-              
-            
-    }
 
+        return readworkout;               
+    }
 }

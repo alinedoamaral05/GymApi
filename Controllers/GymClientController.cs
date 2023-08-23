@@ -18,41 +18,59 @@ public class GymClientController : ControllerBase
     [HttpGet]
     public IActionResult GetAllGymClient()
     {
-        return Ok(_gymClientService.FindAll());
+        try
+        {
+            var gymClients = _gymClientService.FindAll();
+            return Ok(gymClients);
+        }
+        catch (Exception ex) { return Problem(ex.Message); }
     }
 
     [HttpGet("{clientId}")]
     public IActionResult GetGymClientById(int clientId)
     {
-        
-        return Ok(_gymClientService.FindById(clientId));
+        try
+        {
+            var gymClient =_gymClientService.FindById(clientId);
+            return Ok(gymClient);
+        }
+        catch (Exception ex) { return Problem(ex.Message); }
     }
 
     [HttpPost]
     [ProducesResponseType(typeof(CreateGymClientDto), StatusCodes.Status201Created)]
     public IActionResult CreateGymClient([FromBody] CreateGymClientDto createGymClientDto)
     {
-        var client = _gymClientService.Create(createGymClientDto);
-
-        return CreatedAtAction(
-            nameof(GetGymClientById),
-            new { id = client.Id },
-            client);
+        try
+        {
+            var gymClient = _gymClientService.Create(createGymClientDto);
+            return CreatedAtAction(
+                nameof(GetGymClientById),
+                new { id = gymClient.Id },
+                gymClient);
+        }
+        catch (Exception ex) { return Problem(ex.Message); }
     }
 
     [HttpPut("{clientId}")]
     public IActionResult UpdateGymClient(int clientId, [FromBody] UpdateGymClientDto updateGymClientDto)
     {
-        _gymClientService.UpdateById(updateGymClientDto, clientId);
-
-        return NoContent();
+        try
+        {
+            _gymClientService.UpdateById(updateGymClientDto, clientId);
+            return NoContent();
+        }
+        catch (Exception ex) { return Problem(ex.Message); }
     }
 
     [HttpDelete("{clientId}")]
     public IActionResult DeleteGymClient(int clientId)
     {
-        _gymClientService.DeleteById(clientId);
-
-        return Ok();
+        try
+        {
+            _gymClientService.DeleteById(clientId);
+            return Ok();
+        }
+        catch (Exception ex) { return Problem(ex.Message); }
     }
 }

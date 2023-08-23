@@ -20,20 +20,17 @@ public class WorkoutRepository : IWorkoutRepository
         _context.Workouts.Add(workout);
         _context.SaveChanges();
         return workout;
-
     }
 
     public void Delete(Workout workout)
     {        
         _context.Workouts.Remove(workout);
         _context.SaveChanges();
-
     }
 
     public ICollection<Workout> FindByClient(int clientId)
     {
         var workouts = _context.Workouts.Where(workout => workout.GymClientId == clientId).ToList();
-
         return workouts;
     }
 
@@ -48,5 +45,6 @@ public class WorkoutRepository : IWorkoutRepository
     {
         _context.Workouts.Update(workout);
         _context.SaveChanges();
+        return workout;
     }
 }

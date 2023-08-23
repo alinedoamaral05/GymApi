@@ -7,7 +7,7 @@ namespace GymApi.Controllers;
 
 [ApiController]
 [Route("/exercicios")]
-public class ExerciseController: ControllerBase
+public class ExerciseController : ControllerBase
 {
     public readonly IExerciseService _exerciseService;
 
@@ -19,8 +19,12 @@ public class ExerciseController: ControllerBase
     [HttpGet]
     public IActionResult GetAllExercises()
     {
-        var exercises = _exerciseService.FindAll();
-        return Ok(exercises);
+        try
+        {
+            var exercises = _exerciseService.FindAll();
+            return Ok(exercises);
+        }
+        catch (Exception ex) { return Problem(ex.Message); }
     }
 
     [HttpGet("{exerciseId}")]
@@ -29,7 +33,6 @@ public class ExerciseController: ControllerBase
         try
         {
             var exercise = _exerciseService.FindById(exerciseId);
-
             return Ok(exercise);
         }
         catch (Exception ex)
@@ -37,26 +40,29 @@ public class ExerciseController: ControllerBase
             if (ex is NotFoundException) return NotFound(ex.Message);
             return Problem(ex.Message);
         }
-
     }
 
     [HttpPost]
     [ProducesResponseType(typeof(CreateExerciseDto), StatusCodes.Status201Created)]
     public IActionResult CreateExercise([FromBody] CreateExerciseDto createExerciseDto)
     {
-        var exercise = _exerciseService.Create(createExerciseDto);
+        try
+        {
+            var exercise = _exerciseService.Create(createExerciseDto);
 
-        return CreatedAtAction(
-            nameof(GetExerciseById),
-            new {id = exercise.Id},
-            exercise);
+            return CreatedAtAction(
+                nameof(GetExerciseById),
+                new { id = exercise.Id },
+                exercise);
+
+        }
+        catch (Exception ex) { return Problem(ex.Message); }
     }
 
     [HttpPut("{exerciseId}")]
     public IActionResult UpdateExercise(int exerciseId, [FromBody] UpdateExerciseDto updateExerciseDto)
     {
         _exerciseService.UpdateById(updateExerciseDto, exerciseId);
-
         return NoContent();
     }
 
@@ -66,7 +72,6 @@ public class ExerciseController: ControllerBase
         try
         {
             _exerciseService.DeleteById(exerciseId);
-
             return NoContent();
         }
         catch (Exception ex)
@@ -74,7 +79,6 @@ public class ExerciseController: ControllerBase
             if (ex is NotFoundException) return NotFound(ex.Message);
             return Problem(ex.Message);
         }
-
     }
 }
 

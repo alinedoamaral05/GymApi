@@ -7,7 +7,7 @@ public interface IExerciseDetailService
 {
     ReadExerciseDetailDto Create(CreateExerciseDetailDto dto);
     ReadExerciseDetailDto UpdateById(UpdateExerciseDetailDto dto, int id);
-    ReadExerciseDetailDto DeleteById(int id);
+    void DeleteById(int id);
     ReadExerciseDetailDto FindById(int id);
-    ICollection<ReadExerciseDetailDto> FindAll();
+    ICollection<ReadExerciseDetailDto> FindByWorkout(int workoutId);
 }

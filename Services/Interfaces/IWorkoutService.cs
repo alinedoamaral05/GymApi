@@ -9,5 +9,5 @@ public interface IWorkoutService
     ReadWorkoutDto UpdateById(UpdateWorkoutDto dto, int id);
     void DeleteById(int id);
     ReadWorkoutDto FindById(int id);
-    ICollection<ReadWorkoutDto> FindByClient();
+    ICollection<ReadWorkoutDto> FindByClient(int clientId);
 }
