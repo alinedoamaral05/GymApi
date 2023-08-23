@@ -1,7 +1,7 @@
 ﻿using GymApi.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace GymApi.Data;
+namespace GymApi.Infra;
 
 public class GymContext: DbContext
 {

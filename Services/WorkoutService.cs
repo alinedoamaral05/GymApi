@@ -3,7 +3,6 @@ using GymApi.Data.Request.Workout;
 using GymApi.Data.Response.Workout;
 using GymApi.Domain.Models;
 using GymApi.Domain.Repositories;
-using GymApi.Domain.Repositories.Interfaces;
 using GymApi.Exceptions;
 
 namespace GymApi.Services;

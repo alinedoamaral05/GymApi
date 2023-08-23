@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace GymApi.Migrations
+namespace GymApi.Infra.Migrations
 {
     /// <inheritdoc />
     public partial class firstVersion : Migration

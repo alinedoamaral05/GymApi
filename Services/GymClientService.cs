@@ -2,7 +2,7 @@
 using GymApi.Data.Request.GymClient;
 using GymApi.Data.Response.GymClient;
 using GymApi.Domain.Models;
-using GymApi.Domain.Repositories.Interfaces;
+using GymApi.Domain.Repositories;
 using GymApi.Exceptions;
 using Microsoft.EntityFrameworkCore;
 

@@ -2,7 +2,7 @@
 using GymApi.Data.Request.ExerciseDetail;
 using GymApi.Data.Response.ExerciseDetail;
 using GymApi.Domain.Models;
-using GymApi.Domain.Repositories.Interfaces;
+using GymApi.Domain.Repositories;
 using GymApi.Exceptions;
 
 namespace GymApi.Services;
@@ -12,7 +12,10 @@ public class ExerciseDetailService : IExerciseDetailService
     private readonly IMapper _mapper;
     private readonly IExerciseDetailRepository _exerciseDetailRepository;
     
-    public ExerciseDetailService(IMapper mapper, IExerciseDetailRepository exerciseDetailRepository)
+    public ExerciseDetailService(
+        IMapper mapper, 
+        IExerciseDetailRepository exerciseDetailRepository
+    )
     {
         _mapper = mapper;
         _exerciseDetailRepository = exerciseDetailRepository;

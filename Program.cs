@@ -1,6 +1,6 @@
-using GymApi.Data;
+using GymApi.Infra;
+using GymApi.Infra.Repositories;
 using GymApi.Domain.Repositories;
-using GymApi.Domain.Repositories.Interfaces;
 using GymApi.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Any;
@@ -9,12 +9,24 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<GymContext>(options => options.UseSqlServer(connectionString));
+var connectionString = builder
+    .Configuration
+    .GetConnectionString("DefaultConnection");
 
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder
+    .Services
+    .AddDbContext<GymContext>(options => options
+        .UseSqlServer(connectionString)
+    );
 
-builder.Services.AddScoped<IExerciseService, ExerciseService>();
+builder
+    .Services
+    .AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder
+    .Services
+    .AddScoped<IExerciseService, ExerciseService>();
+
 builder.Services.AddScoped<IGymClientService, GymClientService>();
 builder.Services.AddScoped<IWorkoutService, WorkoutService>();
 builder.Services.AddScoped<IExerciseDetailService, ExerciseDetailService>();
@@ -26,6 +38,7 @@ builder.Services.AddScoped<IExerciseDetailRepository, ExerciseDetailRepository>(
 
 
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>

@@ -2,7 +2,7 @@
 using GymApi.Data.Request.Exercise;
 using GymApi.Data.Response.Exercise;
 using GymApi.Domain.Models;
-using GymApi.Domain.Repositories.Interfaces;
+using GymApi.Domain.Repositories;
 using GymApi.Exceptions;
 
 namespace GymApi.Services;

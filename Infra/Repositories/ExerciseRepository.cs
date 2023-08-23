@@ -1,8 +1,8 @@
-﻿using GymApi.Data;
-using GymApi.Domain.Repositories.Interfaces;
+﻿using GymApi.Infra;
 using GymApi.Domain.Models;
+using GymApi.Domain.Repositories;
 
-namespace GymApi.Domain.Repositories;
+namespace GymApi.Infra.Repositories;
 
 public class ExerciseRepository: IExerciseRepository
 {

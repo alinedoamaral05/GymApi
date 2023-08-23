@@ -1,6 +1,6 @@
 ﻿using GymApi.Domain.Models;
 
-namespace GymApi.Domain.Repositories.Interfaces;
+namespace GymApi.Domain.Repositories;
 
 public interface IExerciseRepository 
 {

@@ -1,7 +1,6 @@
 ﻿using GymApi.Domain.Models;
-using System.Collections;
 
-namespace GymApi.Domain.Repositories.Interfaces;
+namespace GymApi.Domain.Repositories;
 
 public interface IWorkoutRepository
 {
