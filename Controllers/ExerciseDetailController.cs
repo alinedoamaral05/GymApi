@@ -1,7 +1,5 @@
-﻿using AutoMapper;
-using GymApi.Data.Request.ExerciseDetail;
-using GymApi.Data.Response.ExerciseDetail;
-using GymApi.Domain.Models;
+﻿using GymApi.Data.Request.ExerciseDetail;
+using GymApi.Exceptions;
 using GymApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,69 +16,108 @@ public class ExerciseDetailController : ControllerBase
         _exerciseDetailService = exerciseDetailService;
     }
 
-    [HttpGet]
+    [HttpGet("/treinos/{workoutId}/detalhesExercicio")]
     public IActionResult GetAllExerciseDetailByWorkout(int workoutId)
     {
         try
         {
-            var details = _exerciseDetailService.FindByWorkout(workoutId);
+            var details = _exerciseDetailService
+                .FindByWorkout(workoutId);
+            
             return Ok(details);
         }
+        
         catch (Exception ex)
-        { return Problem(ex.Message); }
+        { 
+            return Problem(ex.Message); 
+        }
     }
 
-    [HttpGet("{exerciseDetailId}")]
-    public IActionResult GetClientExerciseDetailsById(int exerciseDetailId)
+    [HttpGet("{id}")]
+    public IActionResult GetExerciseDetailsById(int id)
     {
         try
         {
-            var detail = _exerciseDetailService.FindById(exerciseDetailId);
+            var detail = _exerciseDetailService
+                .FindById(id);
+            
             return Ok(detail);
         }
+
         catch (Exception ex)
-        { return Problem(ex.Message); }
+        {
+            if (ex is NotFoundException)
+                return NotFound(ex.Message);
+
+            return Problem(ex.Message);
+        }
     }
 
     [HttpPost]
     [ProducesResponseType(typeof(CreateExerciseDetailDto), StatusCodes.Status201Created)]
-    public IActionResult CreateClientExerciseDetails([FromBody] CreateExerciseDetailDto exerciseDetailDto)
+    public IActionResult CreateExerciseDetails(
+        [FromBody] CreateExerciseDetailDto exerciseDetailDto
+    )
     {
         try
         {
-            var exerciseDetail = _exerciseDetailService.Create(exerciseDetailDto);
+            var exerciseDetail = _exerciseDetailService
+                .Create(exerciseDetailDto);
 
             return CreatedAtAction(
-            nameof(GetClientExerciseDetailsById),
-            new { id = exerciseDetail.Id },
-            exerciseDetail);
+                nameof(GetExerciseDetailsById),
+                new { id = exerciseDetail.Id },
+                exerciseDetail
+            );
         }
+
         catch (Exception ex)
-        { return Problem(ex.Message); }
+        { 
+            if (ex is BadRequestException)
+                return BadRequest(ex.Message);
+            
+            return Problem(ex.Message); 
+        }
     }
 
-    [HttpPut("{exerciseDetailId}")]
-    public IActionResult UpdateClientExerciseDetail(int exerciseDetailId, [FromBody] UpdateExerciseDetailDto dto)
+    [HttpPut("{id}")]
+    public IActionResult UpdateClientExerciseDetail(
+        int id, 
+        [FromBody] UpdateExerciseDetailDto dto
+    )
     {
         try
         {
-            _exerciseDetailService.UpdateById(dto, exerciseDetailId);
+            _exerciseDetailService
+                .UpdateById(dto, id);
+            
             return NoContent();
         }
         catch (Exception ex)
-        { return Problem(ex.Message); }
+        {
+            if (ex is BadRequestException)
+                return BadRequest(ex.Message);
+                
+            return Problem(ex.Message); 
+        }
     }
 
-    [HttpDelete("{exerciseDetailId}")]
-    public IActionResult DeleteExerciseDetail(int exerciseDetailId)
+    [HttpDelete("{id}")]
+    public IActionResult DeleteExerciseDetail(int id)
     {
         try
         {
-            _exerciseDetailService.DeleteById(exerciseDetailId);
-            return Ok();
+            _exerciseDetailService
+                .DeleteById(id);
+            
+            return NoContent();
         }
         catch (Exception ex)
-        { return Problem(ex.Message); }
-    }
+        { 
+            if (ex is NotFoundException)
+                return NotFound(ex.Message);
 
+            return Problem(ex.Message); 
+        }
+    }
 }

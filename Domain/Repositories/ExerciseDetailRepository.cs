@@ -1,12 +1,14 @@
 ﻿using GymApi.Data;
 using GymApi.Domain.Models;
 using GymApi.Domain.Repositories.Interfaces;
+using GymApi.Exceptions;
 
 namespace GymApi.Domain.Repositories;
 
 public class ExerciseDetailRepository: IExerciseDetailRepository
 {
     private readonly GymContext _context;
+
     public ExerciseDetailRepository(GymContext context)
     {
         _context = context;
@@ -14,16 +16,35 @@ public class ExerciseDetailRepository: IExerciseDetailRepository
 
     public ExerciseDetail Create(ExerciseDetail exerciseDetail)
     {
-        _context.ExerciseDetails.Add(exerciseDetail);
-        _context.SaveChanges();
+        var exerciseExists = _context
+            .Exercises
+            .Any(exercise => exercise.Id == exerciseDetail.ExerciseId);
+
+        var workoutExists = _context
+            .Workouts
+            .Any(workout => workout.Id == exerciseDetail.WorkoutId);
+
+        if (!exerciseExists || !workoutExists)
+            throw new BadRequestException();
+
+        _context
+            .ExerciseDetails
+            .Add(exerciseDetail);
+
+        _context
+            .SaveChanges();
 
         return exerciseDetail;
     }
 
     public void Delete(ExerciseDetail exerciseDetail)
     {
-        _context.ExerciseDetails.Remove(exerciseDetail);
-        _context.SaveChanges();
+        _context
+            .ExerciseDetails
+            .Remove(exerciseDetail);
+        
+        _context
+            .SaveChanges();
     }
 
     public ICollection<ExerciseDetail> FindByWorkout(int workoutId)
@@ -37,15 +58,32 @@ public class ExerciseDetailRepository: IExerciseDetailRepository
 
     public ExerciseDetail? FindById(int id)
     {
-        var exerciseDetail = _context.ExerciseDetails.FirstOrDefault(ex => ex.Id == id);
+        var exerciseDetail = _context
+            .ExerciseDetails
+            .FirstOrDefault(ex => ex.Id == id);
 
         return exerciseDetail;
     }
 
     public ExerciseDetail Update(ExerciseDetail exerciseDetail)
     {
-        _context.ExerciseDetails.Update(exerciseDetail);
-        _context.SaveChanges();
+        var exerciseExists = _context
+            .Exercises
+            .Any(exercise => exercise.Id == exerciseDetail.ExerciseId);
+
+        var workoutExists = _context
+            .Workouts
+            .Any(workout => workout.Id == exerciseDetail.WorkoutId);
+
+        if (!exerciseExists || !workoutExists)
+            throw new BadRequestException();
+
+        _context
+            .ExerciseDetails
+            .Update(exerciseDetail);
+
+        _context
+            .SaveChanges();
 
         return exerciseDetail;
     }

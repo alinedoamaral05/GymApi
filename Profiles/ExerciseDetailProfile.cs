@@ -12,5 +12,6 @@ public class ExerciseDetailProfile: Profile
         CreateMap<CreateExerciseDetailDto, ExerciseDetail>();
         CreateMap<ExerciseDetail, ReadExerciseDetailDto>();
         CreateMap<UpdateExerciseDetailDto, ExerciseDetail>();
+        CreateMap<UpdateExerciseDetailDto, CreateExerciseDetailDto>();
     }
 }
